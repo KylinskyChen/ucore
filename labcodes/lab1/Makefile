@@ -162,7 +162,7 @@ $(call create_target,kernel)
 
 # create bootblock
 bootfiles = $(call listf_cc,boot)
-$(foreach f,$(bootfiles),$(call cc_compile,$(f),$(CC),$(CFLAGS) -Os -nostdinc))
+$(foreach f,$(bootfiles), $(call cc_compile,$(f),$(CC),$(CFLAGS) -Os -nostdinc))
 
 bootblock = $(call totarget,bootblock)
 

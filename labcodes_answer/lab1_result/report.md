@@ -7,13 +7,13 @@
 
 ```
 bin/ucore.img
-| 生成ucore.img的相关代码为
+| 生成 ucore.img 的相关代码为
 | $(UCOREIMG): $(kernel) $(bootblock)
 |	$(V)dd if=/dev/zero of=$@ count=10000
 |	$(V)dd if=$(bootblock) of=$@ conv=notrunc
 |	$(V)dd if=$(kernel) of=$@ seek=1 conv=notrunc
 |
-| 为了生成ucore.img，首先需要生成bootblock、kernel
+| 为了生成 ucore.img，首先需要生成 bootblock、kernel
 |
 |>	bin/bootblock
 |	| 生成bootblock的相关代码为
@@ -146,8 +146,6 @@ bin/ucore.img
 从sign.c的代码来看，一个磁盘主引导扇区只有512字节。且
 第510个（倒数第二个）字节是0x55，
 第511个（倒数第一个）字节是0xAA。
-
-
 
 ## [练习2]
 
